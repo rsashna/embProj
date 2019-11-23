@@ -1,0 +1,461 @@
+ARM Linker, 5.03 [Build 76] [MDK-ARM Professional]
+
+==============================================================================
+
+Section Cross References
+
+    startup_lpc17xx.o(RESET) refers to startup_lpc17xx.o(STACK) for __initial_sp
+    startup_lpc17xx.o(RESET) refers to startup_lpc17xx.o(.text) for Reset_Handler
+    startup_lpc17xx.o(RESET) refers to irq.o(.text) for SysTick_Handler
+    startup_lpc17xx.o(.text) refers to system_lpc17xx.o(.text) for SystemInit
+    startup_lpc17xx.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    system_lpc17xx.o(.text) refers to uldiv.o(.text) for __aeabi_uldivmod
+    system_lpc17xx.o(.text) refers to system_lpc17xx.o(.data) for SystemCoreClock
+    blinky.o(.text) refers to kbd.o(.text) for get_button
+    blinky.o(.text) refers to glcd_spi_lpc1700.o(.text) for GLCD_Clear
+    blinky.o(.text) refers to rand.o(.text) for rand
+    blinky.o(.text) refers to blinky.o(.data) for ranum
+    blinky.o(.text) refers to smd.o(.constdata) for smD
+    blinky.o(.text) refers to smfr.o(.constdata) for smFR
+    blinky.o(.text) refers to smfl.o(.constdata) for smFL
+    blinky.o(.text) refers to expb.o(.constdata) for expb
+    blinky.o(.text) refers to dkir.o(.constdata) for dkir
+    blinky.o(.text) refers to huh.o(.constdata) for huh
+    blinky.o(.text) refers to isthis.o(.constdata) for isthis
+    blinky.o(.text) refers to led.o(.text) for LED_Init
+    blinky.o(.text) refers to system_lpc17xx.o(.data) for SystemCoreClock
+    irq.o(.text) refers to irq.o(.data) for ticks
+    glcd_spi_lpc1700.o(.text) refers to glcd_spi_lpc1700.o(.data) for Himax
+    glcd_spi_lpc1700.o(.text) refers to glcd_spi_lpc1700.o(.constdata) for Font_6x8_h
+    led.o(.text) refers to led.o(.constdata) for led_mask
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    uldiv.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    uldiv.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    rand.o(.text) refers to rand.o(.data) for .data
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup_lpc17xx.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup_lpc17xx.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to blinky.o(.text) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to blinky.o(.text) for main
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing startup_lpc17xx.o(HEAP), (0 bytes).
+    Removing system_lpc17xx.o(.rev16_text), (4 bytes).
+    Removing system_lpc17xx.o(.revsh_text), (4 bytes).
+    Removing core_cm3.o(.emb_text), (32 bytes).
+    Removing blinky.o(.rev16_text), (4 bytes).
+    Removing blinky.o(.revsh_text), (4 bytes).
+    Removing glcd_spi_lpc1700.o(.rev16_text), (4 bytes).
+    Removing glcd_spi_lpc1700.o(.revsh_text), (4 bytes).
+    Removing led.o(.rev16_text), (4 bytes).
+    Removing led.o(.revsh_text), (4 bytes).
+    Removing kbd.o(.rev16_text), (4 bytes).
+    Removing kbd.o(.revsh_text), (4 bytes).
+    Removing kbd.o(.data), (4 bytes).
+    Removing pball.o(.constdata), (1801 bytes).
+
+14 unused section(s) (total 1877 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    RESET                                    0x00000000   Section      204  startup_lpc17xx.o(RESET)
+    ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
+    ../clib/microlib/stdlib/rand.c           0x00000000   Number         0  rand.o ABSOLUTE
+    ..\..\images\dkir.c                      0x00000000   Number         0  dkir.o ABSOLUTE
+    ..\..\images\expb.c                      0x00000000   Number         0  expb.o ABSOLUTE
+    ..\..\images\huh.c                       0x00000000   Number         0  huh.o ABSOLUTE
+    ..\..\images\isthis.c                    0x00000000   Number         0  isthis.o ABSOLUTE
+    ..\..\images\pball.c                     0x00000000   Number         0  pball.o ABSOLUTE
+    ..\..\images\smD.c                       0x00000000   Number         0  smd.o ABSOLUTE
+    ..\..\images\smFL.c                      0x00000000   Number         0  smfl.o ABSOLUTE
+    ..\..\images\smFR.c                      0x00000000   Number         0  smfr.o ABSOLUTE
+    Blinky.c                                 0x00000000   Number         0  blinky.o ABSOLUTE
+    Blinky.c                                 0x00000000   Number         0  blinky.o ABSOLUTE
+    GLCD_SPI_LPC1700.c                       0x00000000   Number         0  glcd_spi_lpc1700.o ABSOLUTE
+    GLCD_SPI_LPC1700.c                       0x00000000   Number         0  glcd_spi_lpc1700.o ABSOLUTE
+    IRQ.c                                    0x00000000   Number         0  irq.o ABSOLUTE
+    KBD.c                                    0x00000000   Number         0  kbd.o ABSOLUTE
+    KBD.c                                    0x00000000   Number         0  kbd.o ABSOLUTE
+    LED.c                                    0x00000000   Number         0  led.o ABSOLUTE
+    LED.c                                    0x00000000   Number         0  led.o ABSOLUTE
+    core_cm3.c                               0x00000000   Number         0  core_cm3.o ABSOLUTE
+    core_cm3.c                               0x00000000   Number         0  core_cm3.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
+    init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    startup_LPC17xx.s                        0x00000000   Number         0  startup_lpc17xx.o ABSOLUTE
+    system_LPC17xx.c                         0x00000000   Number         0  system_lpc17xx.o ABSOLUTE
+    system_LPC17xx.c                         0x00000000   Number         0  system_lpc17xx.o ABSOLUTE
+    .ARM.Collect$$$$00000000                 0x000000cc   Section        0  entry.o(.ARM.Collect$$$$00000000)
+    .ARM.Collect$$$$00000001                 0x000000cc   Section        4  entry2.o(.ARM.Collect$$$$00000001)
+    .ARM.Collect$$$$00000004                 0x000000d0   Section        4  entry5.o(.ARM.Collect$$$$00000004)
+    .ARM.Collect$$$$00000008                 0x000000d4   Section        0  entry7b.o(.ARM.Collect$$$$00000008)
+    .ARM.Collect$$$$0000000A                 0x000000d4   Section        0  entry8b.o(.ARM.Collect$$$$0000000A)
+    .ARM.Collect$$$$0000000B                 0x000000d4   Section        8  entry9a.o(.ARM.Collect$$$$0000000B)
+    .ARM.Collect$$$$0000000D                 0x000000dc   Section        0  entry10a.o(.ARM.Collect$$$$0000000D)
+    .ARM.Collect$$$$0000000F                 0x000000dc   Section        0  entry11a.o(.ARM.Collect$$$$0000000F)
+    .ARM.Collect$$$$00002712                 0x000000dc   Section        4  entry2.o(.ARM.Collect$$$$00002712)
+    __lit__00000000                          0x000000dc   Data           4  entry2.o(.ARM.Collect$$$$00002712)
+    .text                                    0x000000e0   Section       36  startup_lpc17xx.o(.text)
+    .text                                    0x00000104   Section        0  irq.o(.text)
+    .text                                    0x00000180   Section        0  led.o(.text)
+    .text                                    0x0000022c   Section        0  kbd.o(.text)
+    .text                                    0x0000028c   Section        0  uldiv.o(.text)
+    i.__scatterload_copy                     0x000002ee   Section       14  handlers.o(i.__scatterload_copy)
+    .ARM.__at_0x02FC                         0x000002fc   Section        4  startup_lpc17xx.o(.ARM.__at_0x02FC)
+    .text                                    0x00000300   Section        0  system_lpc17xx.o(.text)
+    .text                                    0x00000760   Section        0  blinky.o(.text)
+    .text                                    0x00000f60   Section        0  glcd_spi_lpc1700.o(.text)
+    delay                                    0x00000f61   Thumb Code    14  glcd_spi_lpc1700.o(.text)
+    spi_tran_man                             0x00000f6f   Thumb Code   124  glcd_spi_lpc1700.o(.text)
+    wr_cmd                                   0x00000feb   Thumb Code    36  glcd_spi_lpc1700.o(.text)
+    wr_dat                                   0x0000100f   Thumb Code    36  glcd_spi_lpc1700.o(.text)
+    rd_reg                                   0x00001033   Thumb Code    66  glcd_spi_lpc1700.o(.text)
+    rd_id_man                                0x00001075   Thumb Code   132  glcd_spi_lpc1700.o(.text)
+    spi_tran                                 0x00001a93   Thumb Code    26  glcd_spi_lpc1700.o(.text)
+    wr_dat_start                             0x00001aad   Thumb Code    16  glcd_spi_lpc1700.o(.text)
+    wr_dat_stop                              0x00001abd   Thumb Code     8  glcd_spi_lpc1700.o(.text)
+    wr_dat_only                              0x00001ac5   Thumb Code    18  glcd_spi_lpc1700.o(.text)
+    wr_reg                                   0x00001ad7   Thumb Code    20  glcd_spi_lpc1700.o(.text)
+    .text                                    0x00001b04   Section        0  rand.o(.text)
+    .text                                    0x00001b28   Section        0  llshl.o(.text)
+    .text                                    0x00001b46   Section        0  llushr.o(.text)
+    .text                                    0x00001b68   Section       36  init.o(.text)
+    i.__scatterload_null                     0x00001b8c   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x00001b8e   Section       14  handlers.o(i.__scatterload_zeroinit)
+    .constdata                               0x00001b9c   Section     6272  glcd_spi_lpc1700.o(.constdata)
+    .constdata                               0x0000341c   Section       32  led.o(.constdata)
+    .constdata                               0x0000343c   Section    12001  dkir.o(.constdata)
+    .constdata                               0x0000631d   Section    18401  expb.o(.constdata)
+    .constdata                               0x0000aafe   Section    20001  huh.o(.constdata)
+    .constdata                               0x0000f91f   Section    12001  isthis.o(.constdata)
+    .constdata                               0x00012800   Section     7201  smd.o(.constdata)
+    .constdata                               0x00014421   Section     6601  smfl.o(.constdata)
+    .constdata                               0x00015dea   Section     6001  smfr.o(.constdata)
+    .data                                    0x10000000   Section        8  system_lpc17xx.o(.data)
+    .data                                    0x10000008   Section       28  blinky.o(.data)
+    .data                                    0x10000024   Section        7  irq.o(.data)
+    .data                                    0x1000002c   Section        5  glcd_spi_lpc1700.o(.data)
+    Color                                    0x1000002c   Data           4  glcd_spi_lpc1700.o(.data)
+    Himax                                    0x10000030   Data           1  glcd_spi_lpc1700.o(.data)
+    .data                                    0x10000034   Section        4  rand.o(.data)
+    _rand_state                              0x10000034   Data           4  rand.o(.data)
+    STACK                                    0x10000038   Section      512  startup_lpc17xx.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv4$P$D$K$B$S$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  blinky.o ABSOLUTE
+    __Vectors                                0x00000000   Data           4  startup_lpc17xx.o(RESET)
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __decompress                              - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _microlib_exit                            - Undefined Weak Reference
+    __main                                   0x000000cd   Thumb Code     0  entry.o(.ARM.Collect$$$$00000000)
+    _main_stk                                0x000000cd   Thumb Code     0  entry2.o(.ARM.Collect$$$$00000001)
+    _main_scatterload                        0x000000d1   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    __main_after_scatterload                 0x000000d5   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    _main_clock                              0x000000d5   Thumb Code     0  entry7b.o(.ARM.Collect$$$$00000008)
+    _main_cpp_init                           0x000000d5   Thumb Code     0  entry8b.o(.ARM.Collect$$$$0000000A)
+    _main_init                               0x000000d5   Thumb Code     0  entry9a.o(.ARM.Collect$$$$0000000B)
+    __rt_final_cpp                           0x000000dd   Thumb Code     0  entry10a.o(.ARM.Collect$$$$0000000D)
+    __rt_final_exit                          0x000000dd   Thumb Code     0  entry11a.o(.ARM.Collect$$$$0000000F)
+    Reset_Handler                            0x000000e1   Thumb Code     8  startup_lpc17xx.o(.text)
+    NMI_Handler                              0x000000e9   Thumb Code     2  startup_lpc17xx.o(.text)
+    HardFault_Handler                        0x000000eb   Thumb Code     2  startup_lpc17xx.o(.text)
+    MemManage_Handler                        0x000000ed   Thumb Code     2  startup_lpc17xx.o(.text)
+    BusFault_Handler                         0x000000ef   Thumb Code     2  startup_lpc17xx.o(.text)
+    UsageFault_Handler                       0x000000f1   Thumb Code     2  startup_lpc17xx.o(.text)
+    SVC_Handler                              0x000000f3   Thumb Code     2  startup_lpc17xx.o(.text)
+    DebugMon_Handler                         0x000000f5   Thumb Code     2  startup_lpc17xx.o(.text)
+    PendSV_Handler                           0x000000f7   Thumb Code     2  startup_lpc17xx.o(.text)
+    ADC_IRQHandler                           0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    BOD_IRQHandler                           0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    CANActivity_IRQHandler                   0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    CAN_IRQHandler                           0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    DMA_IRQHandler                           0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    EINT0_IRQHandler                         0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    EINT1_IRQHandler                         0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    EINT2_IRQHandler                         0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    EINT3_IRQHandler                         0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    ENET_IRQHandler                          0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    I2C0_IRQHandler                          0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    I2C1_IRQHandler                          0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    I2C2_IRQHandler                          0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    I2S_IRQHandler                           0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    MCPWM_IRQHandler                         0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    PLL0_IRQHandler                          0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    PLL1_IRQHandler                          0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    PWM1_IRQHandler                          0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    QEI_IRQHandler                           0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    RIT_IRQHandler                           0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    RTC_IRQHandler                           0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    SPI_IRQHandler                           0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    SSP0_IRQHandler                          0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    SSP1_IRQHandler                          0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    TIMER0_IRQHandler                        0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    TIMER1_IRQHandler                        0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    TIMER2_IRQHandler                        0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    TIMER3_IRQHandler                        0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    UART0_IRQHandler                         0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    UART1_IRQHandler                         0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    UART2_IRQHandler                         0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    UART3_IRQHandler                         0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    USBActivity_IRQHandler                   0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    USB_IRQHandler                           0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    WDT_IRQHandler                           0x000000fb   Thumb Code     0  startup_lpc17xx.o(.text)
+    SysTick_Handler                          0x00000105   Thumb Code   108  irq.o(.text)
+    LED_Init                                 0x00000181   Thumb Code    38  led.o(.text)
+    LED_On                                   0x000001a7   Thumb Code    40  led.o(.text)
+    LED_Off                                  0x000001cf   Thumb Code    40  led.o(.text)
+    LED_Out                                  0x000001f7   Thumb Code    38  led.o(.text)
+    KBD_Init                                 0x0000022d   Thumb Code    42  kbd.o(.text)
+    KBD_get                                  0x00000257   Thumb Code    12  kbd.o(.text)
+    get_button                               0x00000263   Thumb Code    20  kbd.o(.text)
+    __aeabi_uldivmod                         0x0000028d   Thumb Code    98  uldiv.o(.text)
+    __scatterload_copy                       0x000002ef   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    SystemCoreClockUpdate                    0x00000301   Thumb Code   424  system_lpc17xx.o(.text)
+    SystemInit                               0x000004a9   Thumb Code   290  system_lpc17xx.o(.text)
+    SystemClockUpdate                        0x000005cb   Thumb Code   398  system_lpc17xx.o(.text)
+    delay                                    0x00000761   Thumb Code    20  blinky.o(.text)
+    delayUntilRi                             0x00000775   Thumb Code    30  blinky.o(.text)
+    playGame1                                0x00000793   Thumb Code   338  blinky.o(.text)
+    showGalery                               0x000008e5   Thumb Code   266  blinky.o(.text)
+    selectorChoose                           0x000009ef   Thumb Code   682  blinky.o(.text)
+    main                                     0x00000c99   Thumb Code   526  blinky.o(.text)
+    GLCD_Init                                0x000010f9   Thumb Code  1514  glcd_spi_lpc1700.o(.text)
+    GLCD_SetWindow                           0x000016e3   Thumb Code   168  glcd_spi_lpc1700.o(.text)
+    GLCD_WindowMax                           0x0000178b   Thumb Code    26  glcd_spi_lpc1700.o(.text)
+    GLCD_PutPixel                            0x000017a5   Thumb Code   118  glcd_spi_lpc1700.o(.text)
+    GLCD_SetTextColor                        0x0000181b   Thumb Code     6  glcd_spi_lpc1700.o(.text)
+    GLCD_SetBackColor                        0x00001821   Thumb Code     6  glcd_spi_lpc1700.o(.text)
+    GLCD_Clear                               0x00001827   Thumb Code    42  glcd_spi_lpc1700.o(.text)
+    GLCD_DrawChar                            0x00001851   Thumb Code   150  glcd_spi_lpc1700.o(.text)
+    GLCD_DisplayChar                         0x000018e7   Thumb Code    84  glcd_spi_lpc1700.o(.text)
+    GLCD_DisplayString                       0x0000193b   Thumb Code    40  glcd_spi_lpc1700.o(.text)
+    GLCD_ClearLn                             0x00001963   Thumb Code    94  glcd_spi_lpc1700.o(.text)
+    GLCD_Bargraph                            0x000019c1   Thumb Code    98  glcd_spi_lpc1700.o(.text)
+    GLCD_Bitmap                              0x00001a23   Thumb Code    82  glcd_spi_lpc1700.o(.text)
+    GLCD_ScrollVertical                      0x00001a75   Thumb Code     2  glcd_spi_lpc1700.o(.text)
+    GLCD_WrCmd                               0x00001a77   Thumb Code    12  glcd_spi_lpc1700.o(.text)
+    GLCD_WrReg                               0x00001a83   Thumb Code    16  glcd_spi_lpc1700.o(.text)
+    rand                                     0x00001b05   Thumb Code    20  rand.o(.text)
+    srand                                    0x00001b19   Thumb Code     6  rand.o(.text)
+    __aeabi_llsl                             0x00001b29   Thumb Code    30  llshl.o(.text)
+    _ll_shift_l                              0x00001b29   Thumb Code     0  llshl.o(.text)
+    __aeabi_llsr                             0x00001b47   Thumb Code    32  llushr.o(.text)
+    _ll_ushift_r                             0x00001b47   Thumb Code     0  llushr.o(.text)
+    __scatterload                            0x00001b69   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x00001b69   Thumb Code     0  init.o(.text)
+    __scatterload_null                       0x00001b8d   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x00001b8f   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    Font_6x8_h                               0x00001b9c   Data         896  glcd_spi_lpc1700.o(.constdata)
+    Font_16x24_h                             0x00001f1c   Data        5376  glcd_spi_lpc1700.o(.constdata)
+    led_mask                                 0x0000341c   Data          32  led.o(.constdata)
+    dkir                                     0x0000343c   Data       12001  dkir.o(.constdata)
+    expb                                     0x0000631d   Data       18401  expb.o(.constdata)
+    huh                                      0x0000aafe   Data       20001  huh.o(.constdata)
+    isthis                                   0x0000f91f   Data       12001  isthis.o(.constdata)
+    smD                                      0x00012800   Data        7201  smd.o(.constdata)
+    smFL                                     0x00014421   Data        6601  smfl.o(.constdata)
+    smFR                                     0x00015dea   Data        6001  smfr.o(.constdata)
+    Region$$Table$$Base                      0x0001755c   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x0001757c   Number         0  anon$$obj.o(Region$$Table)
+    SystemCoreClock                          0x10000000   Data           4  system_lpc17xx.o(.data)
+    SystemFrequency                          0x10000004   Data           4  system_lpc17xx.o(.data)
+    movePi                                   0x10000008   Data           4  blinky.o(.data)
+    i                                        0x1000000c   Data           4  blinky.o(.data)
+    raFlag                                   0x10000010   Data           4  blinky.o(.data)
+    endFlag                                  0x10000014   Data           4  blinky.o(.data)
+    selector                                 0x10000018   Data           4  blinky.o(.data)
+    temp                                     0x1000001c   Data           4  blinky.o(.data)
+    ranum                                    0x10000020   Data           4  blinky.o(.data)
+    ticks                                    0x10000024   Data           4  irq.o(.data)
+    ClockLEDOn                               0x10000028   Data           1  irq.o(.data)
+    ClockLEDOff                              0x10000029   Data           1  irq.o(.data)
+    ClockANI                                 0x1000002a   Data           1  irq.o(.data)
+    __initial_sp                             0x10000238   Data           0  startup_lpc17xx.o(STACK)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x000000cd
+
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x000175b4, Max: 0x00040000, ABSOLUTE)
+
+    Execution Region ER_IROM1 (Base: 0x00000000, Size: 0x0001757c, Max: 0x00040000, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x000000cc   Data   RO            3    RESET               startup_lpc17xx.o
+    0x000000cc   0x00000000   Code   RO          299  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x000000cc   0x00000004   Code   RO          307    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x000000d0   0x00000004   Code   RO          310    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x000000d4   0x00000000   Code   RO          312    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x000000d4   0x00000000   Code   RO          314    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x000000d4   0x00000008   Code   RO          315    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x000000dc   0x00000000   Code   RO          317    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x000000dc   0x00000000   Code   RO          319    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x000000dc   0x00000004   Code   RO          308    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x000000e0   0x00000024   Code   RO            5    .text               startup_lpc17xx.o
+    0x00000104   0x0000007c   Code   RO          121    .text               irq.o
+    0x00000180   0x000000ac   Code   RO          172    .text               led.o
+    0x0000022c   0x00000060   Code   RO          199    .text               kbd.o
+    0x0000028c   0x00000062   Code   RO          302    .text               mc_w.l(uldiv.o)
+    0x000002ee   0x0000000e   Code   RO          329    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x000002fc   0x00000004   Code   RO            4    .ARM.__at_0x02FC    startup_lpc17xx.o
+    0x00000300   0x00000460   Code   RO           15    .text               system_lpc17xx.o
+    0x00000760   0x00000800   Code   RO           68    .text               blinky.o
+    0x00000f60   0x00000ba4   Code   RO          135    .text               glcd_spi_lpc1700.o
+    0x00001b04   0x00000024   Code   RO          304    .text               mc_w.l(rand.o)
+    0x00001b28   0x0000001e   Code   RO          321    .text               mc_w.l(llshl.o)
+    0x00001b46   0x00000020   Code   RO          323    .text               mc_w.l(llushr.o)
+    0x00001b66   0x00000002   PAD
+    0x00001b68   0x00000024   Code   RO          325    .text               mc_w.l(init.o)
+    0x00001b8c   0x00000002   Code   RO          330    i.__scatterload_null  mc_w.l(handlers.o)
+    0x00001b8e   0x0000000e   Code   RO          331    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x00001b9c   0x00001880   Data   RO          136    .constdata          glcd_spi_lpc1700.o
+    0x0000341c   0x00000020   Data   RO          173    .constdata          led.o
+    0x0000343c   0x00002ee1   Data   RO          227    .constdata          dkir.o
+    0x0000631d   0x000047e1   Data   RO          236    .constdata          expb.o
+    0x0000aafe   0x00004e21   Data   RO          245    .constdata          huh.o
+    0x0000f91f   0x00002ee1   Data   RO          254    .constdata          isthis.o
+    0x00012800   0x00001c21   Data   RO          272    .constdata          smd.o
+    0x00014421   0x000019c9   Data   RO          281    .constdata          smfl.o
+    0x00015dea   0x00001771   Data   RO          290    .constdata          smfr.o
+    0x0001755b   0x00000001   PAD
+    0x0001755c   0x00000020   Data   RO          327    Region$$Table       anon$$obj.o
+
+
+    Execution Region RW_IRAM1 (Base: 0x10000000, Size: 0x00000238, Max: 0x00008000, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x10000000   0x00000008   Data   RW           16    .data               system_lpc17xx.o
+    0x10000008   0x0000001c   Data   RW           69    .data               blinky.o
+    0x10000024   0x00000007   Data   RW          122    .data               irq.o
+    0x1000002b   0x00000001   PAD
+    0x1000002c   0x00000005   Data   RW          137    .data               glcd_spi_lpc1700.o
+    0x10000031   0x00000003   PAD
+    0x10000034   0x00000004   Data   RW          305    .data               mc_w.l(rand.o)
+    0x10000038   0x00000200   Zero   RW            1    STACK               startup_lpc17xx.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+      2048        430          0         28          0      42891   blinky.o
+         0          0      12001          0          0        499   dkir.o
+         0          0      18401          0          0        499   expb.o
+      2980         62       6272          5          0       8816   glcd_spi_lpc1700.o
+         0          0      20001          0          0        490   huh.o
+       124         16          0          7          0        682   irq.o
+         0          0      12001          0          0        521   isthis.o
+        96         22          0          0          0        726   kbd.o
+       172         16         32          0          0       1325   led.o
+         0          0       7201          0          0        490   smd.o
+         0          0       6601          0          0        499   smfl.o
+         0          0       6001          0          0        499   smfr.o
+        40         12        204          0        512        888   startup_lpc17xx.o
+      1120         90          0          8          0       5407   system_lpc17xx.o
+
+    ----------------------------------------------------------------------
+      6580        648      88748         52        512      64232   Object Totals
+         0          0         32          0          0          0   (incl. Generated)
+         0          0          1          4          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+         0          0          0          0          0          0   entry.o
+         0          0          0          0          0          0   entry10a.o
+         0          0          0          0          0          0   entry11a.o
+         8          4          0          0          0          0   entry2.o
+         4          0          0          0          0          0   entry5.o
+         0          0          0          0          0          0   entry7b.o
+         0          0          0          0          0          0   entry8b.o
+         8          4          0          0          0          0   entry9a.o
+        30          0          0          0          0          0   handlers.o
+        36          8          0          0          0         68   init.o
+        30          0          0          0          0         68   llshl.o
+        32          0          0          0          0         68   llushr.o
+        36         10          0          4          0        136   rand.o
+        98          0          0          0          0         92   uldiv.o
+
+    ----------------------------------------------------------------------
+       284         26          0          4          0        432   Library Totals
+         2          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+       282         26          0          4          0        432   mc_w.l
+
+    ----------------------------------------------------------------------
+       284         26          0          4          0        432   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+      6864        674      88748         56        512      64040   Grand Totals
+      6864        674      88748         56        512      64040   ELF Image Totals
+      6864        674      88748         56          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                95612 (  93.37kB)
+    Total RW  Size (RW Data + ZI Data)               568 (   0.55kB)
+    Total ROM Size (Code + RO Data + RW Data)      95668 (  93.43kB)
+
+==============================================================================
+
