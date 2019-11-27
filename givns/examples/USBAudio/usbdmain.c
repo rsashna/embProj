@@ -53,8 +53,8 @@ int ranum;
 int i=0;
 int raFlag = 0;
 int endFlag = 100;
-
-
+int cvs.height = 210;
+int cvs.width = 240;
 
 int selector=0;
 int temp=0;
@@ -150,7 +150,67 @@ void playGame1(){
 
 }
 
+int checkCol(){
+  //returns 1 if collission occurs
+  if((bY+ball.height)>=(cvs.height-ball.height+5) && (bX>=(pikaX-ball.height+5)) && (bX<=pikaX+pika.height-15))
+  return 1;
+  else {
+    return 0;
+  }
+}
 
+function nextLvl(){
+  score++;
+  bX=int bX=(rand() % (3 - (cvs.width-ball.height) + 1) + 5);
+  bY=0;
+  gravity+=5;
+}
+
+void playGame2(){
+  int gravity = 1.5;
+  int bY=0;
+  int bX=(rand() % (3 - (cvs.width-ball.height) + 1) + 5);
+  int pikaX=120;
+  int pikaY=150;
+  int counter=100;
+  int score=0;
+  int ball.height=30;
+  int pika.height=60;
+  GLCD_Clear  (Black);
+  GLCD_DisplayString(0, 0, 1, "Les Games N.2 ");
+  while(get_button() !=  KBD_DOWN){
+      // redraw background, pika and the ball
+
+          GLCD_Clear  (Black);
+          GLCD_Bitmap (  pikaX,   pikaY, 60,  60, smD); //x then y
+          GLCD_Bitmap (  bX,   bY, 30,  30, pball); //x then y
+          delay(300000);
+          GLCD_DisplayString(0, 0, 1, "SCORE: ", score);//
+
+            if(checkCol()==1){
+              //SHOW YOU LOST
+              GLCD_SetBackColor(White);
+              GLCD_SetTextColor(Blue);
+              GLCD_DisplayString(1, 0, 1, "CAUGHT!      ");
+              GLCD_DisplayString(2, 0, 1, "-END OF GAME-      ");
+              GLCD_DisplayString(3, 0, 1, "Final Score: ", score);
+              delay(30000000);
+              endFlag=100; //reset difficulty for future replay
+              return;
+            }else if((bY+ball.height)==cvs.height){
+              nextLvl();
+            }
+            if((get_button() ==  KBD_RIGHT) && pikaX!=230){
+              pikaX+=5;
+            }else if((get_button() ==  KBD_LEFT) && pikaX!=0){
+            pikaX-=5;
+            }
+            bY += gravity;
+      }
+		GLCD_Clear  (White); //down pressed
+    //return;
+}
+////////////////END OF GAME 2
 
 void showGalery(){
 
@@ -197,49 +257,71 @@ while(get_button() !=  KBD_DOWN){
 	selector=1;//gal
 	GLCD_DisplayString(5, 0, 1, "~Galerie des Memes     ");
   GLCD_DisplayString(6, 0, 1, " L'Audio               ");
-	GLCD_DisplayString(7, 0, 1, " Les Games             ");
+	GLCD_DisplayString(7, 0, 1, " Les Games N. 1        ");
+	GLCD_DisplayString(8, 0, 1, " Les Games N. 2        ");
 	}
 	if (selector==1 && inc=='p'){
 	selector=2;//aud
 	GLCD_DisplayString(5, 0, 1, " Galerie des Memes     ");
   GLCD_DisplayString(6, 0, 1, "~L'Audio               ");
-	GLCD_DisplayString(7, 0, 1, " Les Games             ");
-	}
+	GLCD_DisplayString(7, 0, 1, " Les Games N. 1        ");
+	GLCD_DisplayString(8, 0, 1, " Les Games N. 2        ");
+}
 	if (selector==2 && inc=='p'){
 	selector=3;//game
 	GLCD_DisplayString(5, 0, 1, " Galerie des Memes     ");
   GLCD_DisplayString(6, 0, 1, " L'Audio               ");
-	GLCD_DisplayString(7, 0, 1, "~Les Games             ");
+	GLCD_DisplayString(7, 0, 1, "~Les Games N. 1        ");
+	GLCD_DisplayString(8, 0, 1, " Les Games N. 2        ");
 	}
 	if (selector==3 && inc=='p'){
-	selector=3;//game
+	selector=4;//game 2
 	GLCD_DisplayString(5, 0, 1, " Galerie des Memes     ");
   GLCD_DisplayString(6, 0, 1, " L'Audio               ");
-	GLCD_DisplayString(7, 0, 1, "~Les Games             ");
+	GLCD_DisplayString(7, 0, 1, " Les Games N. 1        ");
+	GLCD_DisplayString(8, 0, 1, "~Les Games N. 2        ");
+	}
+  if (selector==4 && inc=='p'){
+	selector=4;//game
+	GLCD_DisplayString(5, 0, 1, " Galerie des Memes     ");
+  GLCD_DisplayString(6, 0, 1, " L'Audio               ");
+	GLCD_DisplayString(7, 0, 1, " Les Games N. 1        ");
+	GLCD_DisplayString(8, 0, 1, "~Les Games N. 2        ");
 	}
 	if (selector==0 && inc=='m'){
 	selector=0;
 	GLCD_DisplayString(5, 0, 1, " Galerie des Memes     ");
   GLCD_DisplayString(6, 0, 1, " L'Audio               ");
-	GLCD_DisplayString(7, 0, 1, " Les Games             ");
+	GLCD_DisplayString(7, 0, 1, " Les Games N. 1        ");
+	GLCD_DisplayString(8, 0, 1, " Les Games N. 2        ");
 	}
 	if (selector==1 && inc=='m'){
 	selector=1;
 	GLCD_DisplayString(5, 0, 1, "~Galerie des Memes     ");
   GLCD_DisplayString(6, 0, 1, " L'Audio               ");
-	GLCD_DisplayString(7, 0, 1, " Les Games             ");
+	GLCD_DisplayString(7, 0, 1, " Les Games N. 1        ");
+	GLCD_DisplayString(8, 0, 1, " Les Games N. 2        ");
 	}
 	if (selector==2 && inc=='m'){
 	selector=1;
 	GLCD_DisplayString(5, 0, 1, " Galerie des Memes     ");
   GLCD_DisplayString(6, 0, 1, "~L'Audio               ");
-	GLCD_DisplayString(7, 0, 1, " Les Games             ");
+	GLCD_DisplayString(7, 0, 1, " Les Games N. 1        ");
+	GLCD_DisplayString(8, 0, 1, " Les Games N. 2        ");
 	}
 	if (selector==3 && inc=='m'){
 	selector=2;
 	GLCD_DisplayString(5, 0, 1, " Galerie des Memes     ");
   GLCD_DisplayString(6, 0, 1, "~L'Audio               ");
-	GLCD_DisplayString(7, 0, 1, " Les Games             ");
+	GLCD_DisplayString(7, 0, 1, " Les Games N. 1        ");
+	GLCD_DisplayString(8, 0, 1, " Les Games N. 2        ");
+	}
+  if (selector==4 && inc=='m'){
+	selector=3;
+	GLCD_DisplayString(5, 0, 1, " Galerie des Memes     ");
+  GLCD_DisplayString(6, 0, 1, " L'Audio               ");
+	GLCD_DisplayString(7, 0, 1, "~Les Games N. 1        ");
+	GLCD_DisplayString(8, 0, 1, " Les Games N. 2        ");
 	}
 
 	}
@@ -449,7 +531,7 @@ while(1){
 			case 3:
 				if (get_button() ==  KBD_SELECT){
 					LED_On(4);
-					LED_On(5);
+					LED_Off(5);
 					LED_Off(0);
 					LED_Off(1);
 					LED_Off(2);
@@ -457,7 +539,7 @@ while(1){
 					GLCD_Clear  (White);
 					GLCD_SetBackColor(White);
 					GLCD_SetTextColor(Blue);
-				GLCD_DisplayString(1, 0, 1, "     Les Games  ");
+				GLCD_DisplayString(1, 0, 1, "     Les Games 1 ");
 				GLCD_DisplayString(3, 0, 1, "> When Pika signals,");
 				GLCD_DisplayString(4, 0, 1, "raise that flag!");
 				GLCD_DisplayString(5, 0, 1, "> Response has");
@@ -473,6 +555,32 @@ while(1){
 				GLCD_Clear  (White);
 				}
 				break;
+        case 4:
+  				if (get_button() ==  KBD_SELECT){
+  					LED_On(5);
+  					LED_Off(4);
+  					LED_Off(0);
+  					LED_Off(1);
+  					LED_Off(2);
+  					LED_Off(3);
+  					GLCD_Clear  (White);
+  					GLCD_SetBackColor(White);
+  					GLCD_SetTextColor(Blue);
+  				GLCD_DisplayString(1, 0, 1, "     Les Games 2  ");
+  				GLCD_DisplayString(3, 0, 1, "> Avoid the pokeball");
+  				GLCD_DisplayString(5, 0, 1, "> Response has");
+  				GLCD_DisplayString(6, 0, 1, "to be faster ");
+  				GLCD_DisplayString(7, 0, 1, "each round.");
+  					delay(30000000);//exactly 1s
+  				GLCD_DisplayString(8, 0, 1, "   -----3-----    ");
+  					delay(30000000);//exactly 1s
+  				GLCD_DisplayString(8, 0, 1, "    ----2----  ");
+  					delay(30000000);//exactly 1s
+  				GLCD_DisplayString(8, 0, 1, "      --1--  ");
+  				playGame2();
+  				GLCD_Clear  (White);
+  				}
+  				break;
 		}
 	}
 		}
